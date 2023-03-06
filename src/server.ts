@@ -1,13 +1,13 @@
 import 'dotenv/config'
 import fastify from 'fastify'
 import { env } from './env'
-import { helloWorldRoute } from './routes/helloWorld'
-import { transactionRoutes } from './routes/transactions'
+import { transactionsRoutes } from './routes/transactions'
 
 const app = fastify()
 
-app.register(helloWorldRoute)
-app.register(transactionRoutes)
+app.register(transactionsRoutes, {
+  prefix: 'transactions',
+})
 
 app
   .listen({

@@ -1,5 +1,5 @@
 import supertest from 'supertest'
-import { afterAll, beforeAll, describe, test } from 'vitest'
+import { afterAll, beforeAll, describe, expect, test } from 'vitest'
 import { app } from '../src/app'
 
 describe('(e2e) /transactions', () => {
@@ -20,5 +20,29 @@ describe('(e2e) /transactions', () => {
         type: 'credit',
       })
       .expect(201)
+  })
+
+  test('should be able to list all transactions', async () => {
+    const createTransactionResponse = await supertest(app.server)
+      .post('/transactions')
+      .send({
+        title: 'New transaction',
+        amount: 5000,
+        type: 'credit',
+      })
+
+    const cookies = createTransactionResponse.get('Set-Cookie')
+
+    const listTransactionResponse = await supertest(app.server)
+      .get('/transactions')
+      .set('Cookie', cookies)
+      .expect(200)
+
+    expect(listTransactionResponse.body.transactions).toEqual([
+      expect.objectContaining({
+        title: 'New transaction',
+        amount: 5000,
+      }),
+    ])
   })
 })

@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": ">= 18"
+  },
   "scripts": {
     "build": "tsup src --out-dir build",
     "dev": "tsx watch src/server.ts",
@@ -16,6 +19,7 @@
   "devDependencies": {
     "@rocketseat/eslint-config": "^1.2.0",
     "@types/node": "^18.14.6",
+    "@types/supertest": "^2.0.12",
     "eslint": "^8.35.0",
     "tsup": "^6.6.3",
     "tsx": "^3.12.3",
@@ -24,10 +28,10 @@
   },
   "dependencies": {
     "@fastify/cookie": "^8.3.0",
-    "@types/supertest": "^2.0.12",
     "dotenv": "^16.0.3",
     "fastify": "^4.14.1",
     "knex": "^2.4.2",
+    "pg": "^8.10.0",
     "sqlite3": "^5.1.4",
     "supertest": "^6.3.3",
     "zod": "^3.21.2"

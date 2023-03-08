@@ -1,0 +1,147 @@
+_type: export
+__export_format: 4
+__export_date: 2023-03-08T17:46:51.132Z
+__export_source: insomnia.desktop.app:v2022.5.1
+resources:
+  - _id: req_ec753f5c729741e98f0df48b0648f78a
+    parentId: wrk_5634739fdd94450bbd9268d81d299c34
+    modified: 1678211078662
+    created: 1678211065478
+    url: "{{ _.BASE_URL }}/transactions/summary"
+    name: Summary
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1678211065478
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: wrk_5634739fdd94450bbd9268d81d299c34
+    parentId: null
+    modified: 1678131730435
+    created: 1678131730435
+    name: Ignite - Aula 02
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_4adba20f736f4b8a84063e4c320ff865
+    parentId: wrk_5634739fdd94450bbd9268d81d299c34
+    modified: 1678213402687
+    created: 1678210621093
+    url: "{{ _.BASE_URL }}/transactions/3d3c5902-d5d9-4bbe-b987-12d9a9dd1936"
+    name: Get
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1678210621093
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_d9080096c82d48ec8c18e5f02fc99f17
+    parentId: wrk_5634739fdd94450bbd9268d81d299c34
+    modified: 1678210614599
+    created: 1678131850471
+    url: "{{ _.BASE_URL }}/transactions"
+    name: List
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1678131850471
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_2ad8ee7380b4428dbb04b1447f387392
+    parentId: wrk_5634739fdd94450bbd9268d81d299c34
+    modified: 1678297252012
+    created: 1678131736687
+    url: "{{ _.BASE_URL }}/transactions"
+    name: Create
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"title": "some credit",
+        	"amount": 800,
+        	"type": "credit"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_ec2d65167e34443aa79b6ed057a352a6
+    authentication: {}
+    metaSortKey: -1678131736688
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_aba3a11063b2d958e682cc6b6071e3bde75b0766
+    parentId: wrk_5634739fdd94450bbd9268d81d299c34
+    modified: 1678131793079
+    created: 1678131730441
+    name: Base Environment
+    data: {}
+    dataPropertyOrder: {}
+    color: null
+    isPrivate: false
+    metaSortKey: 1678131730441
+    _type: environment
+  - _id: jar_aba3a11063b2d958e682cc6b6071e3bde75b0766
+    parentId: wrk_5634739fdd94450bbd9268d81d299c34
+    modified: 1678213415212
+    created: 1678131730443
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar
+  - _id: spc_75bb603e6e29489099dbb4596c5f831a
+    parentId: wrk_5634739fdd94450bbd9268d81d299c34
+    modified: 1678131730436
+    created: 1678131730436
+    fileName: Ignite - Aula 02
+    contents: ""
+    contentType: yaml
+    _type: api_spec
+  - _id: env_6d5e227fe0844951817cfda01490fa67
+    parentId: env_aba3a11063b2d958e682cc6b6071e3bde75b0766
+    modified: 1678297251528
+    created: 1678131795967
+    name: DEV
+    data:
+      BASE_URL: http://localhost:3334
+    dataPropertyOrder:
+      "&":
+        - BASE_URL
+    color: "#50d358"
+    isPrivate: false
+    metaSortKey: 1678131795967
+    _type: environment
